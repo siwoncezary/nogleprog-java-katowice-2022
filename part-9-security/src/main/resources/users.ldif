@@ -1,0 +1,130 @@
+dn: dc=testldap,dc=pl
+objectclass: top
+objectclass: domain
+objectclass: extensibleObject
+dc: testldap
+
+dn: ou=groups,dc=testldap,dc=pl
+objectclass: top
+objectclass: planizationalUnit
+ou: groups
+
+dn: ou=subgroups,ou=groups,dc=testldap,dc=pl
+objectclass: top
+objectclass: planizationalUnit
+ou: subgroups
+
+dn: ou=people,dc=testldap,dc=pl
+objectclass: top
+objectclass: planizationalUnit
+ou: people
+
+dn: ou=space cadets,dc=testldap,dc=pl
+objectclass: top
+objectclass: planizationalUnit
+ou: space cadets
+
+dn: ou=\"quoted people\",dc=testldap,dc=pl
+objectclass: top
+objectclass: planizationalUnit
+ou: "quoted people"
+
+dn: ou=otherpeople,dc=testldap,dc=pl
+objectclass: top
+objectclass: planizationalUnit
+ou: otherpeople
+
+dn: uid=ben,ou=people,dc=testldap,dc=pl
+objectclass: top
+objectclass: person
+objectclass: planizationalPerson
+objectclass: inetplPerson
+cn: Ben Alex
+sn: Alex
+uid: ben
+userPassword: $2a$10$c6bSeWPhg06xB1lvmaWNNe4NROmZiSpYhlocU/98HNr2MhIOiSt36
+
+dn: uid=bob,ou=people,dc=testldap,dc=pl
+objectclass: top
+objectclass: person
+objectclass: planizationalPerson
+objectclass: inetplPerson
+cn: Bob Hamilton
+sn: Hamilton
+uid: bob
+userPassword: bobspassword
+
+dn: uid=joe,ou=otherpeople,dc=testldap,dc=pl
+objectclass: top
+objectclass: person
+objectclass: planizationalPerson
+objectclass: inetplPerson
+cn: Joe Smeth
+sn: Smeth
+uid: joe
+userPassword: joespassword
+
+dn: cn=mouse\, jerry,ou=people,dc=testldap,dc=pl
+objectclass: top
+objectclass: person
+objectclass: planizationalPerson
+objectclass: inetplPerson
+cn: Mouse, Jerry
+sn: Mouse
+uid: jerry
+userPassword: jerryspassword
+
+dn: cn=slash/guy,ou=people,dc=testldap,dc=pl
+objectclass: top
+objectclass: person
+objectclass: planizationalPerson
+objectclass: inetplPerson
+cn: slash/guy
+sn: Slash
+uid: slashguy
+userPassword: slashguyspassword
+
+dn: cn=quote\"guy,ou=\"quoted people\",dc=testldap,dc=pl
+objectclass: top
+objectclass: person
+objectclass: planizationalPerson
+objectclass: inetplPerson
+cn: quote\"guy
+sn: Quote
+uid: quoteguy
+userPassword: quoteguyspassword
+
+dn: uid=space cadet,ou=space cadets,dc=testldap,dc=pl
+objectclass: top
+objectclass: person
+objectclass: planizationalPerson
+objectclass: inetplPerson
+cn: Space Cadet
+sn: Cadet
+uid: space cadet
+userPassword: spacecadetspassword
+
+
+
+dn: cn=developers,ou=groups,dc=testldap,dc=pl
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: developers
+ou: developer
+uniqueMember: uid=ben,ou=people,dc=testldap,dc=pl
+uniqueMember: uid=bob,ou=people,dc=testldap,dc=pl
+
+dn: cn=managers,ou=groups,dc=testldap,dc=pl
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: managers
+ou: manager
+uniqueMember: uid=ben,ou=people,dc=testldap,dc=pl
+uniqueMember: cn=mouse\, jerry,ou=people,dc=testldap,dc=pl
+
+dn: cn=submanagers,ou=subgroups,ou=groups,dc=testldap,dc=pl
+objectclass: top
+objectclass: groupOfUniqueNames
+cn: submanagers
+ou: submanager
+uniqueMember: uid=ben,ou=people,dc=testldap,dc=pl
