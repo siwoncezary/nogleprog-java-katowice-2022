@@ -13,7 +13,7 @@ public class PizzaBox<T extends Pizza> {
     }
 
     /**
-     * Metoda kopiuje składniki pizzy wyjętej z pudełka podanego w parametrze do pizzy w bieżącym pudełku.
+     * Metoda kopiuje składniki pizzy wyjętej z pudełka w parametrze do pizzy w bieżącym pudełku.
      * Metoda akceptuje pudełka z dowolnym typem uogólnionym, może zaakceptować pudełko na cokolwiek
      * np. PizzaBox<String> jak i PizzaBox<PepperoniPizza>.
      * @param pizzaBox

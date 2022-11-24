@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/layout :: head">
+    <meta charset="UTF-8">
+    <title>Books List</title>
+</head>
+<body>
+<nav th:replace="fragments/layout :: nav">
+</nav>
+<div class="container">
+    <table class="table">
+        <thead>
+        <tr>
+            <th th:text="#{label.book.title}">
+            </th>
+            <th th:text="#{label.book.editionYear}"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <!--/*@thymesVar id="books" type="List<pl.nobleprog.katowice.part6thymeleaf.entity.Book>"*/-->
+        <tr th:each="book: ${books}">
+            <!--/*@thymesVar id="book" type="pl.nobleprog.katowice.part6thymeleaf.entity.Book"*/-->
+            <td th:text="${book.title}"></td>
+            <td th:text="${book.editionYear}"></td>
+            <td>
+                <a th:href="@{/book/update/{id}(id=${book.id})}">Edytuj</a> |
+                <a th:href="@{/book/delete/{id}(id=${book.id})}">Usuń</a> |
+                <a th:href="@{/book/details/{id}(id=${book.id})}">Szczegóły</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div th:replace="fragments/layout :: scripts">
+
+</div>
+</body>
+</html>

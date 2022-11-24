@@ -13,6 +13,12 @@
         <module>part-1-generics</module>
         <module>part-2-collections</module>
         <module>part-3-functional</module>
+        <module>part-5-servlet</module>
+        <module>part-6-thymeleaf</module>
+        <module>part-7-shell</module>
+        <module>part-8-test</module>
+        <module>part-9-security</module>
+        <module>app</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

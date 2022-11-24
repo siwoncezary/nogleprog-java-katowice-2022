@@ -10,7 +10,7 @@ import java.util.List;
 @Controller
 public class StudentsController {
 
-    @GetMapping("/students")
+    @GetMapping("/student")
     public String studentsIndex(Model model){
         model.addAttribute("students", List.of(
                 Student.builder()

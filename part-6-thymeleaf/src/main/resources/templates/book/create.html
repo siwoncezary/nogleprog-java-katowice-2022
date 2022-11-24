@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/layout :: head">
+    <meta charset="UTF-8">
+    <title>Books List</title>
+</head>
+<body>
+<nav th:replace="fragments/layout :: nav">
+</nav>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-6">
+            <form th:action="@{/book/create}" th:object="${book}" method="post">
+                <div class="mb-3">
+                    <label th:text="#{label.book.title}">Title</label>
+                    <input class = "form-control" type="text" th:field="*{title}"/>
+                    <span class="text-danger" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Name Error</span>
+                </div>
+                <div class="mb-3">
+                    <label th:text="#{label.book.editionYear}">Title</label>
+                    <input class = "form-control" type="number" th:field="*{editionYear}"/>
+                    <span class="text-danger" th:if="${#fields.hasErrors('editionYear')}" th:errors="*{editionYear}">Name Error</span>
+                </div>
+                <div class="mb-3">
+                    <label>ISBN</label>
+                    <input class = "form-control" type="text" th:field="*{isbn}"/>
+                    <span class="text-danger" th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}">Name Error</span>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary" type="submit">Zapisz</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/layout :: scripts">
+
+</div>
+</body>
+</html>
